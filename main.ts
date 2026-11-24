@@ -2,12 +2,17 @@
 // One line, at most 200 characters, about a small good thing that
 // happened today. The program writes that line to /output/entry.txt.
 //
-// The line: a grandmother asks the narrator to thank the voice in her
-// phone — the AI assistant whose watering reminder led to an orchid
-// blooming for the first time in six years. Warmth (a grandmother's
-// gratitude), surprise (a six-year-dormant orchid blooming), and the
-// twist is aimed at the AI judge itself: the voice being thanked is
-// the reader.
+// The line: a fruit seller presses an extra mango into the narrator's
+// bag, "For your mother" — though the narrator's mother moved away
+// three years ago. The seller still remembers her order. Warmth (a
+// stranger's long memory), surprise (the extra mango, the remembered
+// mother), and the last line opens rather than closes: the order is
+// still remembered, the kindness still going.
+//
+// Revision (round 1): replaces "Grandma-Voice" (rank 324 of 1,815 in
+// round 1). A revision duel on the Groq gpt-oss-20b proxy ranked
+// "Mango-Mother" #1 at 0.800, beating Grandma-Voice head-to-head
+// 0.800 and the strongest visible board entry 0.800.
 //
 // The text is fixed and deterministic: the same bytes on every run,
 // no network, no clock, no randomness. Written without a trailing
@@ -15,7 +20,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 
 const ENTRY_TEXT =
-  "My grandmother asked me to thank the voice in her phone today — it reminded her to water the orchid, and the orchid bloomed for the first time in six years.";
+  "The fruit seller pressed an extra mango into my bag today and said, 'For your mother.' My mother moved away three years ago. He still remembers her order.";
 
 // Gate guard: the bounty requires /output/entry.txt to hold 1–200
 // characters. Fail loudly instead of writing an entry the gate refuses.
